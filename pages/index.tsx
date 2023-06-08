@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import type { GetServerSideProps } from 'next'
+import type { GetStaticProps } from 'next'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -73,7 +73,7 @@ export default function Home({
   )
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
   const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
